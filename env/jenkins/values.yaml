@@ -1,1 +1,3 @@
 enabled: true
+InstallPlugins:
+  - aws-credentials:latest
