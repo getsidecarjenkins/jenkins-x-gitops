@@ -15,14 +15,14 @@ spec:
   promotionStrategy: Never
   source:
     ref: master
-    url: https://github.com/getsidecartest/environment-dragonmud-dev.git
+    url: https://github.com/Getsidecar/jenkins-x-gitops.git
   teamSettings:
     appsRepository: http://chartmuseum.jenkins-x.io
     buildPackName: kubernetes-workloads
     buildPackRef: master
     buildPackUrl: https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes.git
     dockerRegistryOrg: jenkins-x-235314
-    envOrganisation: getsidecartest
+    envOrganisation: Getsidecar
     gitServer: https://github.com
     helmTemplate: true
     importMode: Jenkinsfile

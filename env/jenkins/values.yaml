@@ -1,3 +1,15 @@
 enabled: true
-InstallPlugins:
-  - aws-credentials:latest
+Master:
+  OverwritePlugins: true
+  InstallPlugins:
+    - github-oauth: latest
+    - slack: latest
+    - kubernetes: latest
+    - aws-credentials: latest
+    - pipeline-aws: latest
+    - pipeline-utility-steps: latest
+    - amazon-ecr: latest
+    - purge-build-queue-plugin: latest
+    - http_request: latest
+    - throttle-concurrents: latest
+    - job-dsl: latest

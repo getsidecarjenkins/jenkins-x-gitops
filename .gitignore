@@ -1,4 +1,7 @@
 
 # lets not accidentally check in Secret YAMLs!
-secrets.yaml
+env/secrets.yaml
 mysecrets.yaml
+
+# intellij
+*.iml
