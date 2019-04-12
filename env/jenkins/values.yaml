@@ -6,3 +6,4 @@ Master:
   ImagePullPolicy: "Always"
   InstallPlugins:
   - github-oauth: latest
+  - slack: latest
