@@ -3,5 +3,11 @@
 env/secrets.yaml
 mysecrets.yaml
 
+# generated files and jenkins charts
+env/values.yaml*
+env/charts*
+env/requirements.lock
+
+
 # intellij
 *.iml
