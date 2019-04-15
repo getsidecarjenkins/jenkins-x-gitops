@@ -17,6 +17,17 @@ pipeline {
         }
       }
     }
+    stage('Setup kube env') {
+      steps {
+        container('jx-base') {
+          withCredentials([file(credentialsId: 'kubeconfig', variable: 'FILE')]) {
+            sh label: "Kube Config", script: "mkdir -p ~/.kube && mv ${FILE} ~/.kube/config"
+            sh label: "Kube use-context",
+                    script: "kubectl config use-context gke_jenkins-x-235314_us-central1-a_jenkinsx-ng"
+          }
+        }
+      }
+    }
     stage('Validate Environment') {
       steps {
         container('jx-base') {
