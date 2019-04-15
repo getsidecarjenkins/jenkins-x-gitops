@@ -22,7 +22,7 @@ pipeline {
         container('jx-base') {
           withCredentials([file(credentialsId: 'gcloud-auth', variable: 'FILE')]) {
             sh label: "gcloud Config", script: "mkdir -p ~/.gcloud && mv ${FILE} ~/.gcloud/config"
-            sh label: "gcloud Config activate", script: "gcloud auth activate-service-account --key-file=~/.gcloud/config"
+            sh label: "gcloud Config activate", script: "gcloud auth activate-service-account --key-file=/home/jenkins/.gcloud/config"
           }
           withCredentials([file(credentialsId: 'kubeconfig', variable: 'FILE')]) {
             sh label: "Kube Config", script: "mkdir -p ~/.kube && mv ${FILE} ~/.kube/config"
