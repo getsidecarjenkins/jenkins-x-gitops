@@ -1,9 +1,9 @@
 enabled: true
 Master:
-  OverwritePlugins: true
-  Image: "jenkins/jenkins"
-  ImageTag: "lts"
-  ImagePullPolicy: "Always"
-  InstallPlugins:
-  - github-oauth: latest
-  - slack: latest
+  resources:
+    requests:
+      cpu: "50m"
+      memory: "256Mi"
+    limits:
+      cpu: "2000m"
+      memory: "4096Mi"

@@ -21,6 +21,7 @@ pipeline {
       steps {
         container('jx-base') {
           dir('env') {
+            sh 'jx ctx -b'
             sh 'jx step helm build'
           }
         }
@@ -33,6 +34,7 @@ pipeline {
       steps {
         container('jx-base') {
           dir('env') {
+            sh 'jx ctx -b'
             sh 'jx step env apply'
           }
         }
