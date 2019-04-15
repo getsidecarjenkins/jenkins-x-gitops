@@ -20,7 +20,7 @@ pipeline {
     stage('Setup kube env') {
       steps {
         container('jx-base') {
-          withCredentials([file(credentialsId: 'jenkins-x-235314', variable: 'FILE')]) {
+          withCredentials([file(credentialsId: 'gcloud-auth', variable: 'FILE')]) {
             sh label: "gcloud Config", script: "mkdir -p ~/.gcloud && mv ${FILE} ~/.gcloud/config"
             sh label: "gcloud Config activate", script: "gcloud auth activate-service-account --key-file=~/.gcloud/config"
           }
